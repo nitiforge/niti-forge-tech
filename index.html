@@ -363,6 +363,121 @@
     .process-steps::before { display: none; }
     .footer-top { flex-direction: column; }
   }
+
+  /* ── TEAM SECTION ── */
+  .team { background: var(--white); }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .team-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px 24px; text-align: center;
+    transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .team-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(15,23,42,0.08); border-color: var(--secondary); }
+  .team-avatar {
+    width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 16px;
+    background: var(--gradient); display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 800; color: white; letter-spacing: -1px;
+  }
+  .team-name { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+  .team-role { font-size: 13px; color: var(--secondary); font-weight: 600; margin-bottom: 12px; letter-spacing: 0.3px; }
+  .team-bio { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+  .team-socials { display: flex; gap: 8px; justify-content: center; }
+  .team-social {
+    width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; text-decoration: none; color: var(--text-muted);
+    transition: all 0.2s;
+  }
+  .team-social:hover { background: var(--gradient); color: white; border-color: transparent; }
+
+  /* ── PRICING ── */
+  .pricing { background: var(--surface); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: start; }
+  .pricing-card {
+    background: white; border: 1.5px solid var(--border); border-radius: 20px;
+    padding: 36px 32px; transition: all 0.25s; position: relative;
+  }
+  .pricing-card.featured {
+    background: var(--gradient); border-color: transparent;
+    box-shadow: 0 24px 60px rgba(37,99,235,0.25);
+    transform: scale(1.02);
+  }
+  .pricing-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: white; font-size: 11px; font-weight: 700;
+    padding: 4px 16px; border-radius: 100px; letter-spacing: 1px; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .pricing-plan { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .pricing-card.featured .pricing-plan { color: rgba(255,255,255,0.7); }
+  .pricing-card:not(.featured) .pricing-plan { color: var(--secondary); }
+  .pricing-price { font-size: 42px; font-weight: 900; letter-spacing: -2px; line-height: 1; margin-bottom: 4px; color: var(--primary); }
+  .pricing-card.featured .pricing-price { color: white; }
+  .pricing-period { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  .pricing-card.featured .pricing-period { color: rgba(255,255,255,0.6); }
+  .pricing-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
+  .pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.8); }
+  .pricing-features { list-style: none; margin-bottom: 32px; }
+  .pricing-features li { font-size: 14px; color: var(--text); padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
+  .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.15); }
+  .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .pricing-card.featured .pricing-features li::before { color: white; }
+  .pricing-cta {
+    width: 100%; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 600;
+    text-align: center; text-decoration: none; display: block; transition: all 0.2s;
+    border: 1.5px solid var(--border); background: white; color: var(--primary);
+  }
+  .pricing-card.featured .pricing-cta { background: white; color: var(--secondary); border-color: transparent; }
+  .pricing-cta:hover { background: var(--primary); color: white; border-color: var(--primary); }
+  .pricing-card.featured .pricing-cta:hover { background: rgba(255,255,255,0.9); }
+  .pricing-note { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 40px; }
+
+  /* ── FAQ ── */
+  .faq { background: var(--white); }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .faq-item {
+    border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; transition: all 0.2s;
+  }
+  .faq-item:hover { border-color: var(--secondary); }
+  .faq-question {
+    width: 100%; padding: 20px 24px; background: none; border: none;
+    text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; font-size: 15px; font-weight: 600; color: var(--primary);
+    font-family: inherit;
+  }
+  .faq-icon { width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: all 0.2s; }
+  .faq-item.open .faq-icon { background: var(--gradient); color: white; border-color: transparent; transform: rotate(45deg); }
+  .faq-answer { font-size: 14px; color: var(--text-muted); line-height: 1.7; padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.35s ease; }
+  .faq-item.open .faq-answer { padding: 0 24px 20px; max-height: 300px; }
+
+  /* ── SUPPORT ── */
+  .support { background: var(--surface); }
+  .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .support-card {
+    background: white; border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px 24px; transition: all 0.25s;
+  }
+  .support-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(6,182,212,0.1); }
+  .support-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+  .support-card h4 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .support-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+  .support-link { font-size: 13px; font-weight: 600; color: var(--secondary); text-decoration: none; display: flex; align-items: center; gap: 4px; }
+  .support-link:hover { gap: 8px; }
+
+  /* ── COUNTER STRIP ── */
+  .counter-strip { background: var(--primary); padding: 48px 2rem; }
+  .counter-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; text-align: center; }
+  .counter-item {}
+  .counter-num { font-size: 44px; font-weight: 900; letter-spacing: -2px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+  .counter-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+  @media (max-width: 768px) {
+    .faq-grid { grid-template-columns: 1fr; }
+    .counter-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .pricing-card.featured { transform: scale(1); }
+  }
+
 </style>
 </head>
 <body>
@@ -375,9 +490,10 @@
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#stack">Stack</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#support">Support</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch →</a>
 </nav>
@@ -593,12 +709,224 @@
   </div>
 </div>
 
+
+<!-- COUNTER STRIP -->
+<div class="counter-strip">
+  <div class="counter-inner">
+    <div class="counter-item reveal">
+      <div class="counter-num">50+</div>
+      <div class="counter-label">Projects Delivered</div>
+    </div>
+    <div class="counter-item reveal reveal-delay-1">
+      <div class="counter-num">30+</div>
+      <div class="counter-label">Happy Clients</div>
+    </div>
+    <div class="counter-item reveal reveal-delay-2">
+      <div class="counter-num">3+</div>
+      <div class="counter-label">Years Experience</div>
+    </div>
+    <div class="counter-item reveal reveal-delay-3">
+      <div class="counter-num">100%</div>
+      <div class="counter-label">Client Retention</div>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <p class="section-label reveal">Our People</p>
+    <h2 class="section-title reveal">The minds behind<br>Niti Forge</h2>
+    <p class="section-desc reveal">A small, sharp team of builders, designers, and educators — each obsessed with craft and outcome.</p>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar">DB</div>
+        <div class="team-name">Durgesh Borse</div>
+        <div class="team-role">Founder </div>
+        <div class="team-bio">UPSC aspirant turned full-stack builder. Runs Niti Pathshala and architects AI-first digital solutions that actually ship.</div>
+        <div class="team-socials">
+          <a href="https://instagram.com/durgesh_borse26" target="_blank" class="team-social">📸</a>
+          <a href="mailto:nitiforge@gmail.com" class="team-social">✉️</a>
+          <a href="https://wa.me/917972882503" target="_blank" class="team-social">💬</a>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-avatar">DT</div>
+        <div class="team-name">Design Team</div>
+        <div class="team-role">UI/UX & Brand</div>
+        <div class="team-bio">Crafting interfaces that feel effortless — from wireframe to pixel-perfect delivery. Brand systems built to last.</div>
+        <div class="team-socials">
+          <a href="#contact" class="team-social">💼</a>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-avatar">AT</div>
+        <div class="team-name">AI & Tech Team</div>
+        <div class="team-role">AI Systems & Automation</div>
+        <div class="team-bio">Building intelligent workflows, chatbots, and data pipelines. We make AI practical, not theoretical.</div>
+        <div class="team-socials">
+          <a href="#contact" class="team-social">💼</a>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-avatar">+</div>
+        <div class="team-name">Join the Team</div>
+        <div class="team-role">Open Positions</div>
+        <div class="team-bio">We work with driven collaborators — designers, developers, content creators. Got skills? Let's talk.</div>
+        <div class="team-socials">
+          <a href="mailto:nitiforge@gmail.com" class="team-social">📩</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="section-label reveal">Transparent Pricing</p>
+    <h2 class="section-title reveal">Simple plans, real results</h2>
+    <p class="section-desc reveal">No hidden fees, no surprises. Pick what fits your project — or talk to us for something custom.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-plan">Starter</div>
+        <div class="pricing-price">₹9,999</div>
+        <div class="pricing-period">One-time project</div>
+        <div class="pricing-desc">Perfect for landing pages, small businesses, or students needing a solid digital presence.</div>
+        <ul class="pricing-features">
+          <li>1-page responsive website</li>
+          <li>Mobile-first design</li>
+          <li>Contact form & WhatsApp link</li>
+          <li>1 round of revisions</li>
+          <li>Delivery in 7 days</li>
+        </ul>
+        <a href="https://wa.me/917972882503?text=Hi, I'm interested in the Starter plan" target="_blank" class="pricing-cta">Get Started →</a>
+      </div>
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-plan">Professional</div>
+        <div class="pricing-price">₹29,999</div>
+        <div class="pricing-period">Full project</div>
+        <div class="pricing-desc">For growing businesses who need a complete web presence with branding and automation.</div>
+        <ul class="pricing-features">
+          <li>Multi-page website (up to 8 pages)</li>
+          <li>Custom branding & logo</li>
+          <li>Admin panel / CMS integration</li>
+          <li>AI chatbot or automation</li>
+          <li>3 months support</li>
+          <li>Unlimited revisions (30 days)</li>
+        </ul>
+        <a href="https://wa.me/917972882503?text=Hi, I'm interested in the Professional plan" target="_blank" class="pricing-cta">Start Now →</a>
+      </div>
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-plan">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-period">Monthly retainer</div>
+        <div class="pricing-desc">For institutions, ed-tech platforms, or any project that needs a dedicated tech partner.</div>
+        <ul class="pricing-features">
+          <li>Full-stack web + app development</li>
+          <li>AI/ML integrations</li>
+          <li>EdTech portal & content systems</li>
+          <li>Dedicated support & SLA</li>
+          <li>Monthly strategy sessions</li>
+          <li>Priority 24hr response</li>
+        </ul>
+        <a href="mailto:nitiforge@gmail.com?subject=Enterprise Inquiry" class="pricing-cta">Talk to Us →</a>
+      </div>
+    </div>
+    <p class="pricing-note reveal">💡 All prices in INR. Custom quotes available for NGOs, schools & startups. <a href="mailto:nitiforge@gmail.com" style="color:var(--secondary);">Ask us.</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="section-label reveal">Got Questions?</p>
+    <h2 class="section-title reveal">Frequently asked</h2>
+    <p class="section-desc reveal">Still unsure? Reach out directly — we reply fast.</p>
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does a project take? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Most websites are delivered in 7–21 days depending on complexity. We'll give you a clear timeline before we start — no surprises.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you work with students or small budgets? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Yes! We have special pricing for students, NGOs, and early-stage startups. Message us on WhatsApp and we'll figure something out.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What technologies do you use? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">React, Next.js, Python, Node.js, Supabase, Firebase, and more. For AI — OpenAI, Anthropic APIs, and custom ML pipelines. We match the stack to the project, not the other way around.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you offer maintenance after launch? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Yes. All plans include at least 1 month of support. For ongoing maintenance, we offer flexible monthly retainer packages.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can you help with EdTech or UPSC content platforms? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Absolutely — it's our home ground. We built Niti Pathshala, so we know exactly what an exam prep platform needs: test portals, PDF systems, progress trackers, and more.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do we get started? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Simple — WhatsApp us or email nitiforge@gmail.com. First call is free. We'll understand your goals, suggest a plan, and send a quote within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support" id="support">
+  <div class="container">
+    <p class="section-label reveal">We've Got Your Back</p>
+    <h2 class="section-title reveal">Support that's actually helpful</h2>
+    <p class="section-desc reveal">Multiple ways to reach us — whichever is fastest for you.</p>
+    <div class="support-grid">
+      <div class="support-card reveal">
+        <span class="support-icon">💬</span>
+        <h4>WhatsApp (Fastest)</h4>
+        <p>Message us directly for quick questions, status updates, or to start a new project. Usually reply within 1 hour.</p>
+        <a href="https://wa.me/917972882503" target="_blank" class="support-link">Chat now →</a>
+      </div>
+      <div class="support-card reveal reveal-delay-1">
+        <span class="support-icon">📧</span>
+        <h4>Email Support</h4>
+        <p>For detailed briefs, proposals, and formal project inquiries. We respond within 24 hours on working days.</p>
+        <a href="mailto:nitiforge@gmail.com" class="support-link">Send email →</a>
+      </div>
+      <div class="support-card reveal reveal-delay-2">
+        <span class="support-icon">📸</span>
+        <h4>Instagram</h4>
+        <p>Follow our work, see behind-the-scenes process, and DM us for quick chats. Active daily.</p>
+        <a href="https://instagram.com/niti_forge" target="_blank" class="support-link">@niti_forge →</a>
+      </div>
+      <div class="support-card reveal reveal-delay-3">
+        <span class="support-icon">📚</span>
+        <h4>Niti Pathshala</h4>
+        <p>Exploring UPSC/MPSC prep? Visit our education platform for notes, tests, and study resources.</p>
+        <a href="#" class="support-link">Visit platform →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="container">
     <div class="cta-card reveal">
       <h2>Ready to forge something remarkable?</h2>
-      <p>Whether you need a website, an AI product, or a brand system — let's talk. The first conversation is free.</p>
+      <p>Whether you need a website, an AI product, or a brand system — let's talk. The conversation is totally free.</p>
       <a href="mailto:nitiforge@gmail.com" class="btn-white">Start a Project →</a>
     </div>
   </div>
@@ -648,6 +976,15 @@
 </footer>
 
 <script>
+
+  // FAQ Toggle
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
