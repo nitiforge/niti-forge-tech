@@ -240,6 +240,47 @@
     padding: 3px 10px; border-radius: 100px;
   }
 
+  /* ── PRODUCTS SHOWCASE ── */
+  .products { background: var(--surface); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .product-card {
+    display: block; text-decoration: none;
+    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
+    padding: 32px; position: relative; overflow: hidden;
+    transition: all 0.25s;
+  }
+  .product-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gradient); opacity: 0; transition: opacity 0.25s;
+  }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,23,42,0.08); border-color: transparent; }
+  .product-card:hover::before { opacity: 1; }
+  .product-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--surface2); display: grid; place-items: center;
+    font-size: 22px; margin-bottom: 20px;
+  }
+  .product-card h3 { font-size: 19px; font-weight: 700; color: var(--primary); margin-bottom: 8px; letter-spacing: -0.3px; }
+  .product-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+  .product-status {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+    color: #16a34a; background: rgba(22,163,74,0.08);
+    padding: 4px 10px; border-radius: 100px; margin-bottom: 16px;
+  }
+  .product-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #16a34a; }
+  .product-link {
+    font-size: 14px; font-weight: 600; color: var(--secondary);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .product-card:hover .product-link { gap: 10px; }
+  body.dark .product-card { background: #1e293b; border-color: #334155; }
+  body.dark .product-card h3 { color: #f1f5f9; }
+
   /* ── ABOUT SPLIT ── */
   .about { background: var(--surface); }
   .about-inner {
@@ -962,6 +1003,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#why-nf">Why Us</a></li>
@@ -978,6 +1020,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#products" onclick="closeMenu()">Products</a>
   <a href="#team" onclick="closeMenu()">Team</a>
   <a href="#pricing" onclick="closeMenu()">Pricing</a>
   <a href="#why-nf" onclick="closeMenu()">Why Us</a>
@@ -1098,6 +1141,31 @@
         <p>Illustrated magazines, infographics, data visualizations, and editorial content that turns complex ideas into clear stories.</p>
         <span class="service-tag">Editorial · Data Viz</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS SHOWCASE -->
+<section class="products" id="products">
+  <div class="container">
+    <p class="section-label reveal">In The Wild</p>
+    <h2 class="section-title reveal">Tools we've built<br>and use ourselves.</h2>
+    <p class="section-desc reveal">Live products from our own lab — proof of what we ship, not just what we pitch.</p>
+    <div class="products-grid">
+      <a href="https://nitiforge.github.io/nitiforgelab/" target="_blank" rel="noopener" class="product-card reveal">
+        <div class="product-icon">🧪</div>
+        <span class="product-status">Live</span>
+        <h3>Niti Forge Lab Portal</h3>
+        <p>Our experimental hub for in-progress tools, prototypes, and internal builds — a live look at what we're working on.</p>
+        <span class="product-link">Visit lab portal →</span>
+      </a>
+      <a href="https://nitiforge.github.io/economics-calculator/" target="_blank" rel="noopener" class="product-card reveal reveal-delay-1">
+        <div class="product-icon">📈</div>
+        <span class="product-status">Live</span>
+        <h3>Economics Calculator</h3>
+        <p>A dedicated calculator for economics concepts and problem-solving — built for students and exam aspirants.</p>
+        <span class="product-link">Open calculator →</span>
+      </a>
     </div>
   </div>
 </section>
