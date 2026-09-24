@@ -841,6 +841,136 @@
     .mobile-menu { display: none !important; }
   }
 
+
+  /* ── LIVE DEMO SECTION ── */
+  .demo-section { background: var(--surface); }
+  .demo-wrapper {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 24px 80px rgba(15,23,42,0.1);
+  }
+  .demo-topbar {
+    background: #1e293b; padding: 10px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .demo-dots { display: flex; gap: 6px; }
+  .demo-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .demo-urlbar {
+    flex: 1; background: #0f172a; border-radius: 6px;
+    padding: 5px 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .demo-urlbar span { font-size: 11px; color: #64748b; font-family: monospace; }
+  .demo-badge-live {
+    background: #16a34a; color: white; font-size: 9px;
+    font-weight: 700; padding: 2px 8px; border-radius: 100px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .demo-body { display: grid; grid-template-columns: 220px 1fr; min-height: 520px; }
+  .demo-sidebar {
+    background: #0f172a; padding: 20px 0; border-right: 1px solid #1e293b;
+  }
+  .demo-logo-row {
+    padding: 0 20px 20px; border-bottom: 1px solid #1e293b; margin-bottom: 16px;
+  }
+  .demo-logo-name { font-size: 13px; font-weight: 800; color: white; letter-spacing: 0.5px; }
+  .demo-logo-sub { font-size: 10px; color: #475569; margin-top: 2px; }
+  .demo-nav-item {
+    display: flex; align-items: center; gap: 10px; padding: 10px 20px;
+    font-size: 12px; color: #64748b; cursor: default; transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .demo-nav-item.active { color: #60a5fa; background: rgba(37,99,235,0.08); border-left-color: #2563eb; }
+  .demo-nav-item:hover { color: #94a3b8; background: rgba(255,255,255,0.03); }
+  .demo-nav-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: 0.5; flex-shrink: 0; }
+  .demo-main { padding: 24px; background: #f8fafc; overflow: hidden; }
+  .demo-header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .demo-page-title { font-size: 16px; font-weight: 800; color: #0f172a; }
+  .demo-header-actions { display: flex; gap: 8px; }
+  .demo-btn {
+    padding: 7px 14px; border-radius: 7px; font-size: 11px; font-weight: 600;
+    cursor: default; border: none;
+  }
+  .demo-btn-primary { background: #2563eb; color: white; }
+  .demo-btn-outline { background: white; color: #64748b; border: 1px solid #e2e8f0; }
+  .demo-stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 20px; }
+  .demo-stat-card {
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px; transition: all 0.2s;
+  }
+  .demo-stat-label { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .demo-stat-val { font-size: 22px; font-weight: 800; color: #0f172a; }
+  .demo-stat-change { font-size: 10px; color: #16a34a; margin-top: 4px; }
+  .demo-table-wrap { background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; }
+  .demo-table-header { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; }
+  .demo-table-title { font-size: 13px; font-weight: 700; color: #0f172a; }
+  .demo-search { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 10px; font-size: 11px; color: #94a3b8; width: 140px; }
+  .demo-table { width: 100%; border-collapse: collapse; }
+  .demo-table th { font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 14px; text-align: left; background: #f8fafc; border-bottom: 1px solid #f1f5f9; }
+  .demo-table td { font-size: 12px; color: #374151; padding: 11px 14px; border-bottom: 1px solid #f8fafc; }
+  .demo-table tr:last-child td { border-bottom: none; }
+  .demo-status {
+    display: inline-flex; padding: 3px 10px; border-radius: 100px;
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .demo-status.paid { background: #dcfce7; color: #16a34a; }
+  .demo-status.pending { background: #fef3c7; color: #d97706; }
+  .demo-status.overdue { background: #fee2e2; color: #dc2626; }
+
+  /* WATERMARK overlay */
+  .demo-watermark {
+    position: absolute; inset: 0; pointer-events: none; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent;
+  }
+  .demo-watermark-text {
+    font-size: 56px; font-weight: 900; color: rgba(37,99,235,0.06);
+    text-transform: uppercase; letter-spacing: 8px; transform: rotate(-25deg);
+    user-select: none; white-space: nowrap;
+    text-shadow: none; pointer-events: none;
+  }
+  .demo-outer { position: relative; }
+
+  /* Protect overlay */
+  .demo-outer { user-select: none; -webkit-user-select: none; }
+  .demo-protect {
+    position: absolute; inset: 0; z-index: 20; cursor: not-allowed;
+    background: transparent;
+  }
+  .demo-protect:hover .demo-tooltip { opacity: 1; }
+  .demo-tooltip {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: rgba(15,23,42,0.9); color: white; padding: 12px 20px;
+    border-radius: 12px; font-size: 13px; font-weight: 600;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    white-space: nowrap; backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .demo-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: linear-gradient(135deg,rgba(37,99,235,0.1),rgba(6,182,212,0.1));
+    border: 1px solid rgba(37,99,235,0.2); border-radius: 100px;
+    padding: 6px 16px; font-size: 12px; font-weight: 700; color: var(--secondary);
+    margin-bottom: 20px;
+  }
+  body.dark .demo-main { background: #0f172a; }
+  body.dark .demo-stat-card { background: #1e293b; border-color: #334155; }
+  body.dark .demo-stat-label { color: #475569; }
+  body.dark .demo-stat-val { color: #f1f5f9; }
+  body.dark .demo-table-wrap { background: #1e293b; border-color: #334155; }
+  body.dark .demo-table th { background: #0f172a; color: #475569; border-color: #1e293b; }
+  body.dark .demo-table td { color: #94a3b8; border-color: #1e293b; }
+  body.dark .demo-table-header { border-color: #1e293b; }
+  body.dark .demo-page-title { color: #f1f5f9; }
+  body.dark .demo-btn-outline { background: #1e293b; border-color: #334155; color: #94a3b8; }
+  body.dark .demo-search { background: #0f172a; border-color: #334155; color: #475569; }
+  body.dark .demo-wrapper { background: #1e293b; border-color: #334155; }
+
+  @media (max-width: 768px) {
+    .demo-body { grid-template-columns: 1fr; }
+    .demo-sidebar { display: none; }
+    .demo-stats-row { grid-template-columns: 1fr 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -873,6 +1003,7 @@
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#why-nf">Why Us</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#demo">Work</a></li>
     <li><a href="#support">Support</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch →</a>
@@ -1568,6 +1699,109 @@
   </div>
 </section>
 
+
+
+<!-- PORTFOLIO -->
+<section class="demo-section" id="demo">
+  <div class="container">
+    <p class="section-label reveal">Our Work</p>
+    <h2 class="section-title reveal">What we've built</h2>
+    <p class="section-desc reveal">Real projects. Real clients. Built from scratch by Niti Forge — each one solving a specific problem.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;">
+
+      <!-- Project 1: Lab Fee Portal -->
+      <div class="reveal" style="background:var(--white);border:1.5px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,0.06);">
+        <div style="background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:22px 24px;display:flex;align-items:center;gap:12px;">
+          <div style="width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🏛️</div>
+          <div style="flex:1;">
+            <div style="font-size:15px;font-weight:800;color:white;">Library Lab Fee Portal</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;">Fee Management System</div>
+          </div>
+          <span style="background:#16a34a;color:white;font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:1px;text-transform:uppercase;">Live</span>
+        </div>
+        <div style="padding:22px 24px;">
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;">A complete web-based fee management system for a private library client. Tracks members, fees, coordinators, and generates financial reports automatically.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px;">
+            <div style="display:flex;gap:8px;"><span style="color:#2563eb;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Member registration & seat assignment</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#2563eb;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Paid / Pending / Overdue fee tracking</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#2563eb;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Multi-coordinator login & access control</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#2563eb;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Monthly financial reports & PDF export</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#2563eb;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">One-click WhatsApp reminders for dues</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;">
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">HTML/CSS/JS</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">Google Sheets API</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">Apps Script</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">WhatsApp API</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-muted);padding-top:14px;border-top:1px solid var(--border);">🔒 Private — access restricted to client staff only</div>
+        </div>
+      </div>
+
+      <!-- Project 2: Exam Portal -->
+      <div class="reveal reveal-delay-1" style="background:var(--white);border:1.5px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,0.06);">
+        <div style="background:linear-gradient(135deg,#1a0533,#3b0764);padding:22px 24px;display:flex;align-items:center;gap:12px;">
+          <div style="width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📝</div>
+          <div style="flex:1;">
+            <div style="font-size:15px;font-weight:800;color:white;">UPSC/MPSC Exam Portal</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;">EdTech · Niti Pathshala</div>
+          </div>
+          <span style="background:#7c3aed;color:white;font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:1px;text-transform:uppercase;">Live</span>
+        </div>
+        <div style="padding:22px 24px;">
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;">A full-featured online exam platform built for UPSC & MPSC aspirants. Supports timed tests, answer evaluation, score tracking, and detailed performance analytics.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px;">
+            <div style="display:flex;gap:8px;"><span style="color:#7c3aed;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Timed MCQ tests with auto-submit</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#7c3aed;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Score calculation & rank tracking</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#7c3aed;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Subject-wise performance analysis</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#7c3aed;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">PDF study material distribution</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#7c3aed;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Student dashboard with progress history</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;">
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">HTML/CSS/JS</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">Firebase</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">Google Sheets</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-muted);padding-top:14px;border-top:1px solid var(--border);">🔒 Private — accessible to enrolled students only</div>
+        </div>
+      </div>
+
+      <!-- Project 3: Score Calculator -->
+      <div class="reveal reveal-delay-2" style="background:var(--white);border:1.5px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,0.06);">
+        <div style="background:linear-gradient(135deg,#052e16,#064e3b);padding:22px 24px;display:flex;align-items:center;gap:12px;">
+          <div style="width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#059669,#10b981);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🧮</div>
+          <div style="flex:1;">
+            <div style="font-size:15px;font-weight:800;color:white;">UPSC Score Calculator</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;">Tool · Niti Pathshala</div>
+          </div>
+          <span style="background:#059669;color:white;font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:1px;text-transform:uppercase;">Live</span>
+        </div>
+        <div style="padding:22px 24px;">
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;">A smart calculator tool that helps UPSC aspirants estimate their prelims & mains scores, cutoff comparisons, and selection probability based on real data patterns.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px;">
+            <div style="display:flex;gap:8px;"><span style="color:#059669;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Prelims score estimation with negative marking</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#059669;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Mains marks aggregation across papers</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#059669;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Year-wise cutoff comparison chart</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#059669;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Category-wise selection probability</span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#059669;font-weight:700;flex-shrink:0;">✦</span><span style="font-size:12px;color:var(--text-muted);">Downloadable result summary as PDF</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;">
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">HTML/CSS/JS</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">Chart.js</span>
+            <span style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--text-muted);font-weight:600;">PDF.js</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-muted);padding-top:14px;border-top:1px solid var(--border);">🌐 Publicly accessible via Niti Pathshala</div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="reveal" style="text-align:center;font-size:14px;color:var(--text-muted);margin-top:40px;">
+      Want something built for you? <a href="#consult" style="color:var(--secondary);font-weight:600;">Book a free consultation →</a>
+    </p>
+  </div>
+</section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
